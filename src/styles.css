@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+.login-container, .register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.login-card, .register-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.error-alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-actions {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #3a7bc8;
+}
+
+.btn-primary:disabled {
+  background-color: #a0c1e8;
+  cursor: not-allowed;
+}
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
