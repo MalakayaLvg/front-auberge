@@ -12,7 +12,7 @@ export class AuthService {
   private currentUserSubject = new BehaviorSubject<User | null>(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 
-  private apiUrl = 'http://localhost:8000';
+  private apiUrl = 'https://back-auberge.malakayalauvergnat.com';
   private tokenKey = 'auth_token';
 
   constructor(private http: HttpClient) {
@@ -69,7 +69,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<User> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/login_check`, { username, password })
+    return this.http.post<AuthResponse>(`${this.apiUrl}/api/login_check`, { username, password })
       .pipe(
         tap(response => {
           localStorage.setItem(this.tokenKey, response.token);
