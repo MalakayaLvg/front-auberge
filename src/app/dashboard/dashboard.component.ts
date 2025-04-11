@@ -18,7 +18,7 @@ import { RoomCreateComponent } from '../room-create/room-create.component';
         <p>Bienvenue, {{ userName }}!</p>
         <p>Vous êtes connecté avec succès.</p>
 
-        <app-room-create></app-room-create>
+        <button (click)="goToRooms()" class="btn-rooms">Gérer les Chambres</button>
       </div>
     </div>
   `,
@@ -47,6 +47,18 @@ import { RoomCreateComponent } from '../room-create/room-create.component';
     .btn-logout:hover {
       background-color: #c82333;
     }
+    .btn-rooms {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn-rooms:hover {
+      background-color: #0056b3;
+    }
   `]
 })
 export class DashboardComponent {
@@ -55,6 +67,10 @@ export class DashboardComponent {
   constructor(private authService: AuthService, private router: Router) {
     this.authService.currentUser$.subscribe(user => {
     });
+  }
+
+  goToRooms(): void {
+    this.router.navigate(['/rooms']);
   }
 
   logout(): void {
