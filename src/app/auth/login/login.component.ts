@@ -38,7 +38,13 @@ export class LoginComponent {
     this.authService.login(username, password).subscribe({
       next: () => {
         this.isLoading = false;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']).then(success => {
+          if (success) {
+            console.log('Navigation réussie vers dashboard');
+          } else {
+            console.log('Échec de la navigation vers dashboard');
+          }
+        });
       },
       error: (error) => {
         this.isLoading = false;

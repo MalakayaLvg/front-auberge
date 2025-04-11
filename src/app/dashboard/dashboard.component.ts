@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
+import { RoomCreateComponent } from '../room-create/room-create.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RoomCreateComponent],
   template: `
     <div class="dashboard-container">
       <div class="dashboard-header">
@@ -16,6 +17,8 @@ import { AuthService } from '../auth/auth.service';
       <div class="dashboard-content">
         <p>Bienvenue, {{ userName }}!</p>
         <p>Vous êtes connecté avec succès.</p>
+
+        <app-room-create></app-room-create>
       </div>
     </div>
   `,
@@ -51,7 +54,6 @@ export class DashboardComponent {
 
   constructor(private authService: AuthService, private router: Router) {
     this.authService.currentUser$.subscribe(user => {
-
     });
   }
 
